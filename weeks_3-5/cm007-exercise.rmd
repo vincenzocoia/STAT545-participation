@@ -26,7 +26,7 @@ This worksheet contains exercises aimed for practice with `dplyr`.
 
 ```{r}
 gapminder %>% 
-  group_by(continent, year) %>% 
+	group_by(continent, year) %>% 
 	summarize(min_life = min(lifeExp),
 			  country  = country[lifeExp == min_life]) %>% 
 	arrange(min_life)
