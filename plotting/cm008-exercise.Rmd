@@ -212,6 +212,11 @@ gapminder %>%
 
 ```{r, fig.width = 5, fig.height = 5}
 gapminder %>% 
+	filter(continent == "Americas") %>% 
+	ggplot(aes(lifeExp, country)) + 
+	ggridges::geom_density_ridges() +
+	# ggridges::geom_rug(aes(group = country))
+gapminder %>% 
   filter(continent == "Americas") %>% 
   mutate(country = fct_reorder(country, lifeExp, median)) %>% # More on this line later
   ggplot(aes(lifeExp, country)) + 
